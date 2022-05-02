@@ -14,6 +14,11 @@ public class camel extends Actor
      */
     public void act()
     {
-        move(1);
+        if(Greenfoot.isKeyDown("a")){
+            move(-2);
+        }
+        if(Greenfoot.isKeyDown("d")){
+            move(2);
+        }
     }
 }
