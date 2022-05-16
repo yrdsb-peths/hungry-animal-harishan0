@@ -29,6 +29,7 @@ public class Camel extends Actor
         if(isTouching(Apple.class)){
             removeTouching(Apple.class);
             MyWorld world = (MyWorld) getWorld();
+            world.increaseScore();
             world.spawnApple();
         }
     }
