@@ -12,6 +12,8 @@ public class Camel extends Actor
      * Act - do whatever the Camel wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    GreenfootSound camelSound = new GreenfootSound("camel6.mp3");
     public void act()
     {
         if(Greenfoot.isKeyDown("a")){
@@ -31,6 +33,7 @@ public class Camel extends Actor
             MyWorld world = (MyWorld) getWorld();
             world.increaseScore();
             world.spawnApple();
+            camelSound.play();
         }
     }
 }
