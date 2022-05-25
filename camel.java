@@ -13,7 +13,9 @@ public class Camel extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
+    //sound and image imports 
     GreenfootSound camelSound = new GreenfootSound("camel6.mp3");
+    //arrays for animating images
     GreenfootImage[] camelRunRight = new GreenfootImage[12];
     GreenfootImage[] camelRunLeft = new GreenfootImage[12];
     
@@ -21,12 +23,13 @@ public class Camel extends Actor
     SimpleTimer animationTimer = new SimpleTimer(); 
     
     public Camel(){
+        //animation for camel running right 
         for(int i=0;i<camelRunRight.length;i++){
            camelRunRight[i] = new GreenfootImage("run"+(i+1));  
            camelRunRight[i].scale(50,50);
         }
         
-        
+        //animation for camel running left
         for(int i=0;i<camelRunLeft.length;i++){
            camelRunLeft[i] = new GreenfootImage("run"+(i+1)); 
            camelRunLeft[i].mirrorHorizontally();
@@ -42,6 +45,7 @@ public class Camel extends Actor
      * 
      */
     int imageIndex = 0;
+    //code for animating camel
     public void animateCamel(){
         if(animationTimer.millisElapsed()<100){
             return;
@@ -57,6 +61,7 @@ public class Camel extends Actor
             imageIndex= (imageIndex+1) % camelRunLeft.length;
         }
     }
+    //act method for camel, using 'a' and 'd' as input keys to move it left and right
     public void act()
     {
         if(Greenfoot.isKeyDown("a")){
@@ -72,7 +77,8 @@ public class Camel extends Actor
         
         animateCamel();
     }
-    
+    //eat method for camel, where if it touches the apple, apple is removed
+    //new apple is spawned, score is increased, and camel sound is played
     public void eat()
     {
         if(isTouching(Apple.class)){

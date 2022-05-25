@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleScreen extends World
 {
-    Label titleLabel = new Label ("The Camel", 70);
+    //title label created
+    Label titleLabel = new Label ("Hungry Camel", 70);
     /**
      * Constructor for objects of class TitleScreen.
      * 
@@ -17,7 +18,8 @@ public class TitleScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
-
+        
+        //add label for title
         addObject(titleLabel, 200, 100);
         prepare();
     }
@@ -34,6 +36,7 @@ public class TitleScreen extends World
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
+    //prepare method for title screen
     private void prepare()
     {
         Camel camel = new Camel();
@@ -45,11 +48,7 @@ public class TitleScreen extends World
         label.setLocation(309,227);
         label2.setLocation(333,292);
         camel.setLocation(426,115);
-        label2.setLocation(437,291);
-        label.setLocation(418,229);
-        label2.setLocation(468,281);
-        label2.setLocation(342,312);
-        label.setLocation(263,246);
-        label2.setLocation(393,309);
+        label2.setLocation(300,300);
+        label.setLocation(300,250);
     }
 }
